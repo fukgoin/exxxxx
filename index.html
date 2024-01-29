@@ -1,0 +1,190 @@
+<html lang="en">
+<script src="https://kit.fontawesome.com/3a843a5167.js" crossorigin="anonymous"></script>
+
+
+
+<head>
+
+  <title> cold hates monkeys </title>
+
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x=icon" />
+
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="money money money bla bla!!" />
+  <meta property="og:title" content="007" />
+  <meta property="og:description" content="bla bla bla/>
+  <meta content=" #111111" data-react-helmet="true" name="theme-color" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="main.css">
+
+  <script type="module" type="text/javascript" src="main.js"></script>
+  <script src="main.js"></script>
+
+</head>
+
+
+
+<body>
+
+  <main>
+
+    <script>
+
+      function audioPlay() {
+
+        var audio = document.getElementById("audio");
+
+        audio.volume = 0.5;
+
+        audio.play()
+
+      }
+
+    </script>
+
+    <audio loop="" preload="auto" id="audio">
+
+      <source src="music.mp3" type="audio/mp3">
+
+    </audio>
+
+    <input type="checkbox" autocomplete="off" id="overlay-toggle">
+
+    <div class="overlay fullscreen">
+
+      <label for="overlay-toggle" onclick="audioPlay()">
+
+        <div class="welcome">click anywhere monkey</div>
+
+      </label>
+
+    </div>
+    <shader-art autoplay dpr="1" role="img" tabindex="0">
+
+      <script type="buffer" name="position" data-size="2">
+            [-1, 1, -1,-1, 1,1, 1, 1, -1,-1, 1,-1]
+          </script>
+
+      <script type="buffer" name="uv" data-size="2">
+            [ 0, 0,  0, 1, 1,0, 1, 0,  0, 1, 1, 1]
+          </script>
+
+      <script type="vert">
+            #version 300 es
+            precision highp float;
+            in vec4 position;
+            in vec2 uv;
+            out vec2 vUv;
+            out vec4 vPosition;
+            void main() {
+              vUv = uv;
+              vPosition = position;
+              gl_Position = position;
+            }
+          </script>
+
+      <script type="frag">
+            #version 300 es
+            precision highp float;
+            in vec2 vUv;
+            in vec4 vPosition;
+            out vec4 fragColor;
+            uniform vec2 resolution;
+            uniform float time;
+            uniform sampler2D charset;
+            uniform sampler2D message;
+        
+            #define AA 1e-3
+            #define PI 3.141592654
+            #define DEG PI / 180.
+        
+            vec2 rotate(vec2 p, float a) {
+              return vec2(p.x * cos(a) - p.y * sin(a),
+                          p.x * sin(a) + p.y * cos(a));
+            }
+        
+            float nooise(vec2 p) {
+              float n = .5 + .5 * (
+                sin(p.x * .5 + cos(p.y * 4. + .2 * cos(p.x * 2. + time * .1) + time * .2) + time * .3) * 
+                cos(p.y * .7 + sin(p.x * 3. + .3 * cos(p.y * 2. + time * .4) + time * .3) + time * .7)
+              );
+              return n;
+            }
+        
+            vec3 background() {
+              vec2 p0 = vPosition.xy;
+              float aspectRatio = resolution.x / resolution.y;
+              p0.x *= aspectRatio;
+              vec2 p = rotate(p0.xy * .8, time * .025);
+              float n = (nooise(p) + nooise(p * 2.) + nooise(p * 5.)) / 3.;
+              n = n * sin(n * n * 23. + time * .05);
+              n = clamp(smoothstep(.3, .35, n) - smoothstep(.4, .45, n), 0., 1.);
+              return vec3(0.5, 0.7, 1.0) * n;
+            }
+        
+            void main() {
+              float scanlines = .8 + .2 * smoothstep(0., 4., mod(gl_FragCoord.y, 4.));
+              fragColor = vec4(background(),1.);
+            }
+          </script>
+    </shader-art>
+
+    <section class="fullscreen text-content">
+
+      <h1>Cold >_^ </h1>
+      <div class="socials">
+        <a target="_blank">Valorant player!!! (i suck) </a>
+      </div>
+      <div class="socials">
+        <a href="https://x.com/twocupwar" target="_blank"><i class="fa-brands fa-twitter"></i> Twitter</a>
+        <a href="https://tracker.gg/valorant/profile/riot/lucki%23tun/overview" target="_blank"><i
+            class="fa-brands fa-superpowers"></i> Tracker.gg</a>
+      </div>
+      <div class="socials1">
+        <a href="https://instagram.com/wirefraudxd" target="_blank"><i class="fa-brands fa-instagram"></i>
+          Instagram</a>
+        <a href="https://open.spotify.com/user/31ptmi2etdu7oxsze5pzq7dsdwbq?si=4b730ae04c0f4e01" target="_blank"><i
+            class="fa-brands fa-spotify"></i> Spotify</a>
+        <a href="https://www.last.fm/user/abusinharddrugs" target="_blank"><i class="fa-brands fa-lastfm"></i>
+          Last.Fm</a>
+      </div>
+
+      <div class="socials2">
+        <a href="https://twitch.tv/1300war" target="_blank"><i class="fa-brands fa-twitch"></i>
+          Twitch</a>
+      </div>
+      <div class="languages">
+        <a target="_blank"><i class="fa-brands fa-file-code"></i> Languages <i class="fa-brands fa-file-code"></i></a>
+      </div>
+      <div class="languages1">
+        <a target="_blank"><i class="fa-solid fa-laptop-code"></i> C/C++ (learning) </a>
+        <a target="_blank"><i class="fa-brands fa-css3-alt"></i> CSS</a>
+        <a target="_blank"><i class="fa-brands fa-html5"></i> HTML</a>
+
+        <a target="_blank"><i class="fa-brands fa-square-js"></i> Javascript</a>
+        <a target="_blank"><i class="fa-solid fa-code"></i> Typescript</a>
+        <a target="_blank"><i class="fa-brands fa-python"></i> Python</a>
+      </div>
+  </main>
+
+</body>
+
+
+
+</html>
