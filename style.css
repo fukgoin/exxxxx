@@ -87,7 +87,7 @@ shader-art canvas {
 .text-content a:hover {
     transition: 0.5s;
     color: #fff;
-    text-shadow: 0 0 0.40em #800707
+    text-shadow: 0 0 0.40em #ffffff
 }
 
 .socials {
