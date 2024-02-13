@@ -87,7 +87,7 @@ shader-art canvas {
 .text-content a:hover {
     transition: 0.5s;
     color: #fff;
-    text-shadow: 0 0 0.40em #ffffff
+    text-shadow: 0 0 0.40em #800707
 }
 
 .socials {
@@ -184,4 +184,22 @@ shader-art canvas {
     to {
         visibility: hidden
     }
+}
+
+
+.view-counter {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.view-counter img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
 }
