@@ -1,4 +1,7 @@
 // pages/api/views.js
+
+let views = 471;
+
 export default (req, res) => {
     if (req.method === 'POST') {
       let views = 1;
