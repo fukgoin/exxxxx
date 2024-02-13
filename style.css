@@ -4,17 +4,17 @@ html {
     font-family: 'Merriweather', serif;
 }
 
+body {
+    background-image: url('mainn.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 *, *::after, *::before {
     margin: 0;
     padding: 0
 }
 
-body {
-    display: grid;
-    place-items: center;
-    height: 100vh;
-    background: #000000
-}
 
 shader-art {
     display: block;
@@ -31,6 +31,7 @@ shader-art canvas {
 #overlay-toggle {
     display: none
 }
+
 
 .overlay {
     z-index: 1;
@@ -66,7 +67,6 @@ shader-art canvas {
 .text-content h1 {
     color: #fff;
     font-family: 'Merriweather', serif;
-    text-shadow: 0 0 0.40em #800707;
     font-size: 3vw;
     font-weight: 800
 }
